@@ -1,6 +1,8 @@
 Twiddle
 
-Update description.
+Rewrite a record or key returned from an MVCC iterator.
+
+    Discussion:     http://bigeasy.github.io/twiddle/issues/1
 
     Documentation:  http://bigeasy.github.io/twiddle
     Source:         http://github.com/bigeasy/twiddle
