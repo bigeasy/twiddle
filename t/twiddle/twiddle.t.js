@@ -1,7 +1,7 @@
 require('proof')(2, function (step, deepEqual) {
     var twiddle = require('../..'), advance = require('advance'),
         records = [], keys = [], iterator
-    iterator = advance.forward([ 1, 2, 3 ], function (element, callback) {
+    iterator = advance([ 1, 2, 3 ], function (element, callback) {
         callback(null, element, element)
     })
     iterator = twiddle(iterator, function (record, key, callback) {
