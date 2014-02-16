@@ -3,7 +3,6 @@
     "version":          "0.0.1",
     "author":           "Alan Gutierrez <alan@prettyrobots.com>",
     "description":      "Rewrite a record or key returned from an MVCC iterator.",
-    "url":              "http://bigeasy.github.com/twiddle",
     "keywords":
     [
                         "btree", "leveldb", "levelup", "binary", "mvcc",
