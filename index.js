@@ -11,8 +11,8 @@ Twiddle.prototype.next = function (callback) {
     })
 }
 
-Twiddle.prototype.unlock = function () {
-    this._iterator.unlock()
+Twiddle.prototype.unlock = function (callback) {
+    this._iterator.unlock(callback)
 }
 
 module.exports = function (iterator, fixup) {

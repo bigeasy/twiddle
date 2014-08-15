@@ -1,5 +1,6 @@
 ### Issue by Issue
 
+ * Asynchronous `unlock`. #17.
  * Upgrade Proof to 0.0.46. #16.
  * Upgrade Proof to 0.0.44. #15.
  * Remove "url" from `package.json`. #14.

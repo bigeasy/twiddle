@@ -10,9 +10,9 @@ require('proof')(1, function (step, equal) {
         records = [], keys = [], iterator
     iterator = new Bogus
     iterator = twiddle(iterator, function () {})
-    step(/* [function () {
-        iterator.unlock()
-    }], */[function () {
+    step([function () {
+        iterator.unlock(step())
+    }], [function () {
         iterator.next(step())
     }, function (_, error) {
         equal(error.message, 'bogus', 'records')

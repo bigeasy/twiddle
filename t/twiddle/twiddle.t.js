@@ -8,7 +8,7 @@ require('proof')(2, function (step, deepEqual) {
         callback(null, record + 1, key * 2)
     })
     step([function () {
-        iterator.unlock()
+        iterator.unlock(step())
     }], function () {
         step(function () {
             iterator.next(step())
