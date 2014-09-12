@@ -17,7 +17,7 @@ require('proof')(2, function (step, deepEqual) {
                 records.push(record)
                 keys.push(key)
             } else {
-                step(null)
+                return [ step ]
             }
         })()
     }, function () {
