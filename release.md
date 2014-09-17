@@ -1,5 +1,6 @@
 ### Issue by Issue
 
+ * Upgrade Proof to 0.0.48. #19.
  * Upgrade Proof to 0.0.47. #18.
  * Asynchronous `unlock`. #17.
  * Upgrade Proof to 0.0.46. #16.
