@@ -1,4 +1,4 @@
-require('proof')(1, function (step, equal) {
+require('proof')(1, require('cadence')(function (step, assert) {
     function Bogus () {
     }
     Bogus.prototype.next = function (callback) {
@@ -15,6 +15,6 @@ require('proof')(1, function (step, equal) {
     }], [function () {
         iterator.next(step())
     }, function (_, error) {
-        equal(error.message, 'bogus', 'records')
+        assert(error.message, 'bogus', 'records')
     }])
-})
+}))

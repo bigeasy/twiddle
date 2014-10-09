@@ -1,4 +1,4 @@
-require('proof')(2, function (step, deepEqual) {
+require('proof')(2, require('cadence')(function (step, assert) {
     var twiddle = require('../..'), advance = require('advance'),
         records = [], keys = [], iterator
     iterator = advance([ 1, 2, 3 ], function (element, callback) {
@@ -21,7 +21,7 @@ require('proof')(2, function (step, deepEqual) {
             }
         })()
     }, function () {
-        deepEqual(records, [ 2, 3, 4 ], 'records')
-        deepEqual(keys, [ 2, 4, 6 ], 'keys')
+        assert(records, [ 2, 3, 4 ], 'records')
+        assert(keys, [ 2, 4, 6 ], 'keys')
     })
-})
+}))
