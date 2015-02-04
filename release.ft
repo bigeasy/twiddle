@@ -1,5 +1,6 @@
 ### Issue by Issue
 
+ * Remove `require.t.js`. #24.
  * Rename main module to `twiddle.js`. #23.
  * Update license dates. #22.
  * Upgrade Advance to 0.0.9. #21.
