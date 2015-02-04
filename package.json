@@ -21,6 +21,7 @@
                         "type": "git",
                         "url": "http://github.com/bigeasy/twiddle.git"
     },
+    "main":             "twiddle",
     "dependencies":
     {
     },
