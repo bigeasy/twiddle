@@ -1,4 +1,4 @@
-require('proof')(1, require('cadence')(prove))
+require('proof')(1, require('cadence/redux')(prove))
 
 function prove (async, assert) {
     function Bogus () {
@@ -16,7 +16,7 @@ function prove (async, assert) {
         iterator.unlock(async())
     }], [function () {
         iterator.next(async())
-    }, function (_, error) {
+    }, function (error) {
         assert(error.message, 'bogus', 'records')
     }])
 }

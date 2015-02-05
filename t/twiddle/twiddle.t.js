@@ -1,4 +1,4 @@
-require('proof')(2, require('cadence')(prove))
+require('proof')(2, require('cadence/redux')(prove))
 
 function prove (async, assert) {
     var twiddle = require('../..'), advance = require('advance'),
@@ -12,14 +12,14 @@ function prove (async, assert) {
     async([function () {
         iterator.unlock(async())
     }], function () {
-        async(function () {
+        var loop = async(function () {
             iterator.next(async())
         }, function (record, key) {
             if (record && key) {
                 records.push(record)
                 keys.push(key)
             } else {
-                return [ async ]
+                return [ loop ]
             }
         })()
     }, function () {
