@@ -1,4 +1,4 @@
-require('proof')(1, require('cadence')(function (step, assert) {
+require('proof')(1, require('cadence')(function (async, assert) {
     function Bogus () {
     }
     Bogus.prototype.next = function (callback) {
@@ -10,10 +10,10 @@ require('proof')(1, require('cadence')(function (step, assert) {
         records = [], keys = [], iterator
     iterator = new Bogus
     iterator = twiddle(iterator, function () {})
-    step([function () {
-        iterator.unlock(step())
+    async([function () {
+        iterator.unlock(async())
     }], [function () {
-        iterator.next(step())
+        iterator.next(async())
     }, function (_, error) {
         assert(error.message, 'bogus', 'records')
     }])
