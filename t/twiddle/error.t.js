@@ -1,4 +1,6 @@
-require('proof')(1, require('cadence')(function (async, assert) {
+require('proof')(1, require('cadence')(prove))
+
+function prove (async, assert) {
     function Bogus () {
     }
     Bogus.prototype.next = function (callback) {
@@ -17,4 +19,4 @@ require('proof')(1, require('cadence')(function (async, assert) {
     }, function (_, error) {
         assert(error.message, 'bogus', 'records')
     }])
-}))
+}

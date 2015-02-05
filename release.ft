@@ -1,5 +1,6 @@
 ### Issue by Issue
 
+ * Use a `prove` named function in tests. #26.
  * Remove `require.t.js`. #24.
  * Rename main module to `twiddle.js`. #23.
  * Update license dates. #22.
