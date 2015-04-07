@@ -1,6 +1,9 @@
 require('proof')(1, require('cadence/redux')(prove))
 
 function prove (async, assert) {
+    var twiddle = require('../..')
+    var advance = require('advance')
+    var records = [], keys = [], iterator
     function Bogus () {
     }
     Bogus.prototype.next = function (callback) {
@@ -8,8 +11,6 @@ function prove (async, assert) {
     }
     Bogus.prototype.unlock = function (callback) {
     }
-    var twiddle = require('../..'), advance = require('advance'),
-        records = [], keys = [], iterator
     iterator = new Bogus
     iterator = twiddle(iterator, function () {})
     async([function () {

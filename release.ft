@@ -1,5 +1,6 @@
 ### Issue by Issue
 
+ * Implement new `get` interface. #30.
  * Upgrade Proof to 0.0.51. #28.
  * Upgrade to Cadence Redux. #27.
  * Use a `prove` named function in tests. #26.

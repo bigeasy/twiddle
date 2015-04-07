@@ -1,29 +1,24 @@
-require('proof')(2, require('cadence/redux')(prove))
+require('proof')(1, require('cadence/redux')(prove))
 
 function prove (async, assert) {
-    var twiddle = require('../..'), advance = require('advance'),
-        records = [], keys = [], iterator
-    iterator = advance([ 1, 2, 3 ], function (element, callback) {
-        callback(null, element, element)
-    })
-    iterator = twiddle(iterator, function (record, key, callback) {
-        callback(null, record + 1, key * 2)
-    })
+    var twiddle = require('../..')
+    var advance = require('advance')
+    var values = [], iterator
+    iterator = advance.forward(null, [ 1, 2, 3 ])
+    iterator = twiddle(iterator, function (item) { return item + 1 })
     async([function () {
         iterator.unlock(async())
     }], function () {
         var loop = async(function () {
             iterator.next(async())
-        }, function (record, key) {
-            if (record && key) {
-                records.push(record)
-                keys.push(key)
-            } else {
-                return [ loop ]
+        }, function (more) {
+            if (!more) return [ loop ]
+            var got
+            while (got = iterator.get()) {
+                values.push(got)
             }
         })()
     }, function () {
-        assert(records, [ 2, 3, 4 ], 'records')
-        assert(keys, [ 2, 4, 6 ], 'keys')
+        assert(values, [ 2, 3, 4 ], 'twiddled')
     })
 }
