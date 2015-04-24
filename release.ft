@@ -1,5 +1,6 @@
 ### Issue by Issue
 
+ * Upgrade Cadence to 0.0.52. #32.
  * Implement new `get` interface. #30.
  * Upgrade Proof to 0.0.51. #28.
  * Upgrade to Cadence Redux. #27.
