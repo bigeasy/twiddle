@@ -1,4 +1,4 @@
-require('proof')(1, require('cadence/redux')(prove))
+require('proof')(1, require('cadence')(prove))
 
 function prove (async, assert) {
     var twiddle = require('../..')
@@ -12,7 +12,7 @@ function prove (async, assert) {
         var loop = async(function () {
             iterator.next(async())
         }, function (more) {
-            if (!more) return [ loop ]
+            if (!more) return [ loop.break ]
             var got
             while (got = iterator.get()) {
                 values.push(got)
