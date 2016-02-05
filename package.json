@@ -1,6 +1,6 @@
 {
     "name":             "twiddle",
-    "version":          "0.0.5",
+    "version":          "1.0.0",
     "author":           "Alan Gutierrez <alan@prettyrobots.com>",
     "description":      "Rewrite a record or key returned from an MVCC iterator.",
     "keywords":
