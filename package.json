@@ -25,7 +25,7 @@
     {
                         "proof":              "1.x",
                         "cadence":            "1.x",
-                        "advance":            "0.0.16"
+                        "advance":            "1.x"
     },
     "scripts":
     {
