@@ -1,7 +1,7 @@
 require('proof')(1, require('cadence')(prove))
 
 function prove (async, assert) {
-    var twiddle = require('../..')
+    var twiddle = require('..')
     var advance = require('advance')
     var values = [], iterator
     iterator = advance.forward(null, [ 1, 2, 3 ])
