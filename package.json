@@ -1,7 +1,10 @@
 {
     "name":                 "twiddle",
     "version":              "1.0.0",
-    "description":          "Rewrite a record or key returned from an MVCC iterator.",
+    "description":
+
+      "Rewrite a record or key returned from an MVCC iterator.",
+
     "keywords":
     [
                             "btree", "leveldb", "levelup", "binary", "mvcc",
