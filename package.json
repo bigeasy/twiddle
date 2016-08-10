@@ -1,13 +1,13 @@
 {
     "name":                 "twiddle",
     "version":              "1.0.0",
-    "author":               "Alan Gutierrez <alan@prettyrobots.com>",
     "description":          "Rewrite a record or key returned from an MVCC iterator.",
     "keywords":
     [
                             "btree", "leveldb", "levelup", "binary", "mvcc",
                             "database", "json", "b-tree", "concurrent", "persistence"
     ],
+    "author":               "Alan Gutierrez <alan@prettyrobots.com>",
     "homepage":             "https://github.com/bigeasy/twiddle",
     "bugs":                 "https://github.com/bigeasy/twiddle/issues",
     "license":              "MIT",
@@ -16,7 +16,6 @@
                             "type": "git",
                             "url": "http://github.com/bigeasy/twiddle.git"
     },
-    "main":                 "twiddle",
     "dependencies":
     {
     },
@@ -26,6 +25,7 @@
                             "cadence":                      "1.0.x",
                             "proof":                        "1.0.x"
     },
+    "main":                 "twiddle",
     "scripts":
     {
                             "test": "proof platform win32 && proof test */*/*.t.js || t/test"
