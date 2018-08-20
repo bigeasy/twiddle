@@ -17,7 +17,7 @@
     "repository":
     {
                             "type": "git",
-                            "url": "http://github.com/bigeasy/twiddle.git"
+                            "url": "bigeasy/twiddle"
     },
     "dependencies":
     {
