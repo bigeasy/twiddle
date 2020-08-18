@@ -1,25 +1,24 @@
-function Twiddle (iterator, twiddle) {
-    this._iterator = iterator
-    this._twiddle = twiddle
-}
-
-Twiddle.prototype.next = function (callback) {
-    this._iterator.next(callback)
-}
-
-Twiddle.prototype.get = function () {
-    var twiddle = this._twiddle
-    var got = this._iterator.get()
-    if (got != null) {
-        return twiddle(got)
+function Twiddle {
+    constructor (collection, twiddle) {
+        this._outer = collection[Symbol.asyncIterator]()
+        this._inner = null
+        this._twiddle = twiddle
     }
-    return got
+
+    async next () {
+        const inner = this._outer.next()
+        if (inner.done) {
+            return { done: true, value: null }
+        }
+        return {
+            done: false,
+            value: next.value.map(item => this._twiddle.call(null, item))
+        }
+    }
+
+    return () {
+        this._outer['return']()
+    }
 }
 
-Twiddle.prototype.unlock = function (callback) {
-    this._iterator.unlock(callback)
-}
-
-module.exports = function (iterator, twiddle) {
-    return new Twiddle(iterator, twiddle)
-}
+module.exports = Twiddle
