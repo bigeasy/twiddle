@@ -5,7 +5,7 @@ module.exports = function (paginator, twiddle) {
             return this
         },
         next: async function () {
-            const inner = outer.next()
+            const inner = await outer.next()
             if (inner.done) {
                 return { done: true, value: null }
             }
