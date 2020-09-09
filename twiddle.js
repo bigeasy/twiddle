@@ -11,7 +11,7 @@ module.exports = function (paginator, twiddle) {
             }
             return {
                 done: false,
-                value: inner.value.map(item => twiddle(item))
+                value: twiddle(inner.value)
             }
         }
     }
