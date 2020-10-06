@@ -1,18 +1,11 @@
-module.exports = function (paginator, twiddle) {
-    const outer = paginator[Symbol.asyncIterator]()
-    return {
-        [Symbol.asyncIterator]: function () {
-            return this
-        },
-        next: async function () {
-            const inner = await outer.next()
-            if (inner.done) {
-                return { done: true, value: null }
-            }
-            return {
-                done: false,
-                value: twiddle(inner.value)
-            }
+module.exports = function (inner, twiddle) {
+    const iterator = {
+        done: false,
+        next (promises, consume, terminator = iterator) {
+            inner.next(promises, items => {
+                consume(twiddle(items))
+            }, terminator)
         }
     }
+    return iterator
 }
