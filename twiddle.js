@@ -1,8 +1,9 @@
-module.exports = function (untwiddled, twiddle) {
+module.exports = function (source, twiddle) {
     const iterator = {
         done: false,
+        type: source.type,
         next (promises, consume, terminator = iterator) {
-            untwiddled.next(promises, items => {
+            source.next(promises, items => {
                 consume(twiddle(items))
             }, terminator)
         }
