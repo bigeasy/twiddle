@@ -24,7 +24,7 @@
     },
     "devDependencies":
     {
-                            "advance":                      "3.0.0-alpha.10",
+                            "advance":                      "3.0.0-alpha.11",
                             "proof":                        "^9.0.2"
     },
     "main":                 "twiddle",
